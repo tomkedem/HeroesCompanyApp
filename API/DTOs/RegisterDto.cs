@@ -10,8 +10,7 @@ namespace API.DTOs
   {
     [Required]
     public string Username { get; set; }
-    [Required]
-    [StringLength(8, MinimumLength = 8, ErrorMessage = "At least 8 charts")]
+    [RegularExpression(@"^(?=.*?[A-Z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$", ErrorMessage = "At least 8 charts with ▪ One capital letter ▪ One digit ▪ One non-alphanumeric char")]
     public string Password { get; set; }
   }
 }
