@@ -11,6 +11,7 @@ namespace API.DTOs
     [Required]
     public string Username { get; set; }
     [Required]
+    [StringLength(8, MinimumLength = 8, ErrorMessage = "At least 8 charts")]
     public string Password { get; set; }
   }
 }
