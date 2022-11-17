@@ -34,22 +34,23 @@
         >
       </li>
     </ul>
-
     <div
       class="dropdown"
       *ngIf="accountService.currentUser$ | async as user"
       dropdown
     >
-      <a class="nav-link dropdown-toggle text-light mt-3" dropdownToggle
+
+      <a class="nav-link dropdown-toggle text-light" dropdownToggle
         >Welcome {{ user.username | titlecase }}</a
       >
-      >
+
       <div class="dropdown-menu mt-3" *dropdownMenu>
         <a class="dropdown-item">Edit Profile</a>
         <div class="dropdown-divider"></div>
         <a class="dropdown-item" (click)="logout()">Logout</a>
       </div>
-    </div>
+
+  </div>
 
     <form
       *ngIf="(accountService.currentUser$ | async) === null"
@@ -82,4 +83,11 @@
       </button>
     </form>
   </div>
+  <div class="card" style="width: 4rem;float: right;margin-right:20px;" *ngIf="accountService.currentUser$ | async as user">
+    <img
+      src="{{user.picture}}"
+      class="card-img-top"
+      alt="{{ user.username }}"
+    />
+</div>
 </nav>

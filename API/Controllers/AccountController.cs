@@ -64,6 +64,7 @@ namespace API.Controllers
       return new TrainerDto
       {
         Username = user.UserName,
+        Picture = user.Picture,
         Token = _tokenService.CreateToken(user)
       };
 

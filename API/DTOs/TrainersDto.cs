@@ -8,6 +8,7 @@ namespace API.DTOs
   public class TrainerDto
   {
     public string Username { get; set; }
+    public string Picture { get; set; }
     public string Token { get; set; }
 
   }
