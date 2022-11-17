@@ -1,0 +1,13 @@
+[
+  '{{repeat(5)}}',
+  {
+    UserName: '{{firstName("female")}}',  
+    KnownAs: function(){ return this.UserName; },
+    Gender: 'female',
+    City: '{{city()}}',
+   picture: function(num) {
+          return 'https://randomuser.me/api/portraits/women/' +  num.integer(1,99) + '.jpg';
+           
+    }
+  }
+]

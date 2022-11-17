@@ -1,0 +1,242 @@
+[
+  {
+    "guid": "835e3d2d-1ae1-4628-b451-9329bb6afc2a",
+    "FullName": "Wendy Hooper",
+    "Ability": "attacker",
+    "StartedToTrain": "2022-01-29T03:01:33",
+    "SuitColor": "blue",
+    "StartingPower": 3.34,
+    "CurrentPower": 3.08,
+    "Picture": "https://randomuser.me/api/portraits/women/65.jpg"
+  },
+  {
+    "guid": "70c936c7-c77a-4653-b393-41247aa78cd3",
+    "FullName": "Chelsea Quinn",
+    "Ability": "defender",
+    "StartedToTrain": "2022-11-02T06:07:38",
+    "SuitColor": "green",
+    "StartingPower": 1.63,
+    "CurrentPower": 4.97,
+    "Picture": "https://randomuser.me/api/portraits/women/12.jpg"
+  },
+  {
+    "guid": "6469ed7a-18f5-460d-9974-65ad8f4c3013",
+    "FullName": "Heather Beck",
+    "Ability": "attacker",
+    "StartedToTrain": "2022-10-08T10:36:08",
+    "SuitColor": "blue",
+    "StartingPower": 3.35,
+    "CurrentPower": 8.68,
+    "Picture": "https://randomuser.me/api/portraits/women/66.jpg"
+  },
+  {
+    "guid": "5f7efc82-e713-45c0-89dc-53794b3bc278",
+    "FullName": "Celina Lindsey",
+    "Ability": "attacker",
+    "StartedToTrain": "2022-06-02T10:02:29",
+    "SuitColor": "blue",
+    "StartingPower": 7.54,
+    "CurrentPower": 5.02,
+    "Picture": "https://randomuser.me/api/portraits/women/69.jpg"
+  },
+  {
+    "guid": "aa4044bf-9716-4832-86d6-63e04ca80537",
+    "FullName": "Rene Woods",
+    "Ability": "defender",
+    "StartedToTrain": "2022-01-15T10:25:49",
+    "SuitColor": "blue",
+    "StartingPower": 3.05,
+    "CurrentPower": 5.29,
+    "Picture": "https://randomuser.me/api/portraits/women/99.jpg"
+  },
+  {
+    "guid": "456c1232-a7fc-48f7-af1f-910537e33d86",
+    "FullName": "Lula Harding",
+    "Ability": "defender",
+    "StartedToTrain": "2022-06-14T12:05:03",
+    "SuitColor": "green",
+    "StartingPower": 0.79,
+    "CurrentPower": 8.92,
+    "Picture": "https://randomuser.me/api/portraits/women/84.jpg"
+  },
+  {
+    "guid": "22773018-f580-460c-8789-367989eae415",
+    "FullName": "Melba Gutierrez",
+    "Ability": "attacker",
+    "StartedToTrain": "2022-05-12T06:36:57",
+    "SuitColor": "brown",
+    "StartingPower": 7.07,
+    "CurrentPower": 4.37,
+    "Picture": "https://randomuser.me/api/portraits/women/64.jpg"
+  },
+  {
+    "guid": "56167259-471d-4f3e-8747-f637e8a827c3",
+    "FullName": "Julia Henson",
+    "Ability": "defender",
+    "StartedToTrain": "2022-02-22T01:11:58",
+    "SuitColor": "brown",
+    "StartingPower": 7.54,
+    "CurrentPower": 3.05,
+    "Picture": "https://randomuser.me/api/portraits/women/69.jpg"
+  },
+  {
+    "guid": "83bdaadf-1969-4c64-9139-3d51b5b82f25",
+    "FullName": "Whitney Huffman",
+    "Ability": "attacker",
+    "StartedToTrain": "2022-06-07T06:45:13",
+    "SuitColor": "blue",
+    "StartingPower": 7.16,
+    "CurrentPower": 9.9,
+    "Picture": "https://randomuser.me/api/portraits/women/98.jpg"
+  },
+  {
+    "guid": "dd4e882e-1e8f-446a-b059-078a2366f028",
+    "FullName": "Susanne Boyle",
+    "Ability": "defender",
+    "StartedToTrain": "2022-06-28T07:20:42",
+    "SuitColor": "blue",
+    "StartingPower": 1.85,
+    "CurrentPower": 4.73,
+    "Picture": "https://randomuser.me/api/portraits/women/12.jpg"
+  },
+  {
+    "guid": "d9fd76aa-3a02-4ac2-9f8e-71892de386f8",
+    "FullName": "Erica Blackwell",
+    "Ability": "defender",
+    "StartedToTrain": "2022-01-03T04:08:51",
+    "SuitColor": "brown",
+    "StartingPower": 4.19,
+    "CurrentPower": 4.22,
+    "Picture": "https://randomuser.me/api/portraits/women/96.jpg"
+  },
+  {
+    "guid": "13081bf3-aed3-43fb-a1b8-076db3e68339",
+    "FullName": "Alta Patton",
+    "Ability": "defender",
+    "StartedToTrain": "2022-11-16T11:04:09",
+    "SuitColor": "brown",
+    "StartingPower": 5.09,
+    "CurrentPower": 1.57,
+    "Picture": "https://randomuser.me/api/portraits/women/21.jpg"
+  },
+  {
+    "guid": "fe529f74-7587-4c13-b085-9197554305dd",
+    "FullName": "Norton Joyce",
+    "Ability": "defender",
+    "StartedToTrain": "2022-02-01T02:56:31",
+    "SuitColor": "green",
+    "StartingPower": 9.52,
+    "CurrentPower": 0.36,
+    "Picture": "https://randomuser.me/api/portraits/men/33.jpg"
+  },
+  {
+    "guid": "2189118d-0710-4996-ba4c-be82bc277cc9",
+    "FullName": "Sears Velez",
+    "Ability": "defender",
+    "StartedToTrain": "2022-09-06T06:17:42",
+    "SuitColor": "green",
+    "StartingPower": 5.57,
+    "CurrentPower": 6.59,
+    "Picture": "https://randomuser.me/api/portraits/men/38.jpg"
+  },
+  {
+    "guid": "db779132-4f1b-4f77-b2ab-2ddf69da7127",
+    "FullName": "Webster Preston",
+    "Ability": "defender",
+    "StartedToTrain": "2022-02-13T02:16:28",
+    "SuitColor": "brown",
+    "StartingPower": 8.35,
+    "CurrentPower": 3.7,
+    "Picture": "https://randomuser.me/api/portraits/men/48.jpg"
+  },
+  {
+    "guid": "c709518b-bf80-4bc9-87cf-3857e1f39995",
+    "FullName": "Snyder Morales",
+    "Ability": "attacker",
+    "StartedToTrain": "2022-04-17T05:56:33",
+    "SuitColor": "blue",
+    "StartingPower": 9.8,
+    "CurrentPower": 8.32,
+    "Picture": "https://randomuser.me/api/portraits/men/99.jpg"
+  },
+  {
+    "guid": "ce8667fd-3164-4d9b-92c7-5c64b5dc9f63",
+    "FullName": "Logan Bailey",
+    "Ability": "attacker",
+    "StartedToTrain": "2022-03-26T03:51:25",
+    "SuitColor": "blue",
+    "StartingPower": 8.29,
+    "CurrentPower": 2.55,
+    "Picture": "https://randomuser.me/api/portraits/men/52.jpg"
+  },
+  {
+    "guid": "61e6c5af-f502-45f8-b33d-0aa81927fc3c",
+    "FullName": "Clayton Murphy",
+    "Ability": "attacker",
+    "StartedToTrain": "2022-09-06T04:09:23",
+    "SuitColor": "green",
+    "StartingPower": 5.42,
+    "CurrentPower": 9.53,
+    "Picture": "https://randomuser.me/api/portraits/men/10.jpg"
+  },
+  {
+    "guid": "970f62cf-6d90-4d72-82d8-deeef178910c",
+    "FullName": "Manning Becker",
+    "Ability": "defender",
+    "StartedToTrain": "2022-02-02T08:04:02",
+    "SuitColor": "green",
+    "StartingPower": 1.79,
+    "CurrentPower": 1.6,
+    "Picture": "https://randomuser.me/api/portraits/men/68.jpg"
+  },
+  {
+    "guid": "13db34db-3540-4b4d-9aa1-3c9b70991f84",
+    "FullName": "Chapman Manning",
+    "Ability": "defender",
+    "StartedToTrain": "2022-03-04T03:27:40",
+    "SuitColor": "blue",
+    "StartingPower": 8.35,
+    "CurrentPower": 3.09,
+    "Picture": "https://randomuser.me/api/portraits/men/40.jpg"
+  },
+  {
+    "guid": "a9c58e7f-ecb7-4180-b360-4ac2d7b6428d",
+    "FullName": "Hodge Good",
+    "Ability": "attacker",
+    "StartedToTrain": "2022-10-06T07:06:24",
+    "SuitColor": "blue",
+    "StartingPower": 4.88,
+    "CurrentPower": 3.03,
+    "Picture": "https://randomuser.me/api/portraits/men/22.jpg"
+  },
+  {
+    "guid": "ad7b205c-f9c7-42d2-a0b3-69f8cf68b4c6",
+    "FullName": "Barnes Nash",
+    "Ability": "defender",
+    "StartedToTrain": "2022-10-26T06:20:56",
+    "SuitColor": "brown",
+    "StartingPower": 4.17,
+    "CurrentPower": 9.33,
+    "Picture": "https://randomuser.me/api/portraits/men/36.jpg"
+  },
+  {
+    "guid": "ecd3dbb0-c269-450d-bdc3-bbcf696a84dc",
+    "FullName": "Mejia Ewing",
+    "Ability": "defender",
+    "StartedToTrain": "2022-02-24T06:08:25",
+    "SuitColor": "blue",
+    "StartingPower": 4.95,
+    "CurrentPower": 7.39,
+    "Picture": "https://randomuser.me/api/portraits/men/3.jpg"
+  },
+  {
+    "guid": "525ad0f0-37e8-46c2-a6b5-a4d53e8fa01a",
+    "FullName": "Burks Kirkland",
+    "Ability": "attacker",
+    "StartedToTrain": "2022-03-19T08:12:35",
+    "SuitColor": "green",
+    "StartingPower": 6.66,
+    "CurrentPower": 7.92,
+    "Picture": "https://randomuser.me/api/portraits/men/96.jpg"
+  }
+]

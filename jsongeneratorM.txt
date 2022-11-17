@@ -1,0 +1,18 @@
+[
+  '{{repeat(12)}}',
+  {
+    
+    guid: '{{guid()}}',   
+    name: '{{firstName("male")}} {{surname()}}',
+    ability: '{{random("attacker", "defender")}}',
+     
+    startedToTrain: '{{date(new Date(2022, 0, 1), new Date(), "YYYY-MM-ddThh:mm:ss Z")}}',
+    suitColor: '{{random("blue", "brown", "green")}}',    
+    startingPower: '{{floating(0, 10, 2, "0,0.00")}}',
+    currentPower: '{{floating(0, 10, 2, "0,0.00")}}',
+    picture: function(num) {
+          return 'https://randomuser.me/api/portraits/women/' +  num.integer(1,99) + '.jpg';
+           
+    }
+  }
+]

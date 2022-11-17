@@ -10,24 +10,25 @@ using Microsoft.EntityFrameworkCore;
 
 namespace API.Controllers
 {
-  
-  public class UsersController : BaseApiController
+  [Authorize]
+  public class HeroesController : BaseApiController
   {
     private readonly DataContext _context;
-    public UsersController(DataContext context)
+    public HeroesController(DataContext context)
     {
       _context = context;
     }
-    
+
     [HttpGet]
-    [AllowAnonymous]
-    public async Task<ActionResult<IEnumerable<AppUser>>> GetUsers(){       
-        return await _context.Users.ToListAsync();
+    public async Task<ActionResult<IEnumerable<Heroes>>> GetHeroes()
+    {
+      return await _context.Heroes.ToListAsync();
     }
     // api/users/2
     [HttpGet("{id}")]
-    public async Task<ActionResult<AppUser>> GetUsers(int id){        
-        return await _context.Users.FindAsync(id);
+    public async Task<ActionResult<Heroes>> GetHeroes(int id)
+    {
+      return await _context.Heroes.FindAsync(id);
     }
 
   }
