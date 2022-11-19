@@ -12,8 +12,7 @@ namespace API.Extensions
     {
 
       services.AddScoped<ITokenService, TokenService>();
-      services.AddScoped<ITrainerRepository, TrainerRepository>();
-      services.AddScoped<IHeroRepository, HeroRepository>();
+      services.AddScoped<IUnitOfWork, UnitOfWork>();
 
       services.AddAutoMapper(typeof(AutoMapperProfiles).Assembly);
  

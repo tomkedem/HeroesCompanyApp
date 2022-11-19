@@ -9,7 +9,7 @@ namespace API.Data
         Task<HeroDto> GetHeroByUsernameAsync(string username);
         Task<IEnumerable<HeroDto>> GetHeroesAsync();
         Task<IEnumerable<HeroDto>> GetHeroesByTrainerId(int trainerId);
-        Task<bool> SaveAllAsync();
+        
         void Update(Heroes heroes);
     }
 }

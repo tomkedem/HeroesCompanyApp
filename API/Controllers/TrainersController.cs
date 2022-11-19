@@ -1,6 +1,6 @@
 using API.Data;
 using API.DTOs;
-
+using API.Interfaces;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
@@ -9,24 +9,23 @@ namespace API.Controllers
     [Authorize]
   public class TrainersController : BaseApiController
   {
-    private readonly ITrainerRepository _repository;
-   
+    private readonly IUnitOfWork _unitofwork;
 
-    public TrainersController(ITrainerRepository repository)
-    {
-      _repository = repository;      
-    }
+     public TrainersController(IUnitOfWork unitOfWork)
+     {
+        _unitofwork = unitOfWork;
+     }
 
     [HttpGet]
     public async Task<ActionResult<IEnumerable<TrainerDto>>> GetTrainers()
     {
-        return Ok(await _repository.GetTrainsAsync());
+        return Ok(await _unitofwork.TrainerRepository.GetTrainsAsync());
     }
 
     [HttpGet("{username}")]
     public async Task<ActionResult<TrainerDto>> GetTrainer(string username)
     {
-      return await _repository.GetTrainerByUsernameAsync(username);
+      return await _unitofwork.TrainerRepository.GetTrainerByUsernameAsync(username);
     }
 
   }

@@ -8,7 +8,6 @@ namespace API.Data
         Task<TrainerDto> GetTrainByIdAsync(int id);
         Task<TrainerDto> GetTrainerByUsernameAsync(string username);
         Task<IEnumerable<TrainerDto>> GetTrainsAsync();
-        Task<bool> SaveAllAsync();
         void Update(Trainers trainer);
     }
 }

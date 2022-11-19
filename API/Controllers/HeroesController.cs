@@ -1,5 +1,6 @@
 using API.Data;
 using API.DTOs;
+using API.Interfaces;
 using AutoMapper;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -10,28 +11,25 @@ namespace API.Controllers
     //[Authorize]
     public class HeroesController : BaseApiController
     {
-
-        private readonly IHeroRepository _repository;
+        private readonly IUnitOfWork _unitofwork;
         private readonly IMapper _mapper;
-        private readonly ITrainerRepository _userRepository;
 
-        public HeroesController(IHeroRepository repository, IMapper mapper, ITrainerRepository userRepository)
+        public HeroesController(IUnitOfWork unitOfWork,IMapper mapper)
         {
-            _repository = repository;
+            _unitofwork = unitOfWork;
             _mapper = mapper;
-            _userRepository = userRepository;
         }
 
         [HttpGet]       
         public async Task<ActionResult<IEnumerable<HeroDto>>> GetHeroes()
         {       
-            return Ok(await _repository.GetHeroesAsync());
+            return Ok(await _unitofwork.HeroRepository.GetHeroesAsync());
         }
 
         [HttpGet("ByTrainerId/{trainerId}")]
         public async Task<ActionResult<IEnumerable<HeroDto>>> GetHeroesByTrainerId(int trainerId)
         {
-            return Ok(await _repository.GetHeroesByTrainerId(trainerId));
+            return Ok(await _unitofwork.HeroRepository.GetHeroesByTrainerId(trainerId));
         }
         
        
@@ -40,7 +38,7 @@ namespace API.Controllers
         {
             int totalTrainingToday = 0;
          //   var username = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
-            var hero = await _repository.GetHeroByIdAsync(heroUpdateDto.Id);
+            var hero = await _unitofwork.HeroRepository.GetHeroByIdAsync(heroUpdateDto.Id);
             totalTrainingToday = heroUpdateDto.TotalTrainingToday;
             totalTrainingToday += 1;
             hero.TotalTrainingToday = totalTrainingToday;
@@ -57,10 +55,10 @@ namespace API.Controllers
             heroUpdateDto.CurrentPower = float.Parse(last.ToString("n2"));
 
             _mapper.Map(heroUpdateDto, hero);
-            _repository.Update(hero);
+            _unitofwork.HeroRepository.Update(hero);
 
-            await _repository.SaveAllAsync();
-            var hero1 = await _repository.GetHeroByIdAsync(heroUpdateDto.Id);
+            await _unitofwork.Complate();
+            var hero1 = await _unitofwork.HeroRepository.GetHeroByIdAsync(heroUpdateDto.Id);
           
             HeroDto heroDto = new HeroDto();
             _mapper.Map(hero1, heroDto);
