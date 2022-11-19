@@ -1,8 +1,6 @@
 export interface Trainer {
   id: number
-  userName: string
-  passwordHash: string
-  passwordSalt: string
+  username: string
   knownAs: string
   gender: string
   city: string

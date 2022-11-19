@@ -8,7 +8,7 @@ namespace API.DTOs
   public class HeroDto
   {
         public Guid Id { get; set; }
-        public string FullName { get; set; }
+        public string Fullname { get; set; }
         public string Ability { get; set; }
         public DateTime StartedToTrain { get; set; }
         public string SuitColor { get; set; }
