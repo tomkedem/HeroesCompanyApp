@@ -41,7 +41,7 @@ namespace API.Controllers
             int totalTrainingToday = 0;
          //   var username = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
             var hero = await _repository.GetHeroByIdAsync(heroUpdateDto.Id);
-            totalTrainingToday = hero.TotalTrainingToday;
+            totalTrainingToday = heroUpdateDto.TotalTrainingToday;
             totalTrainingToday += 1;
             hero.TotalTrainingToday = totalTrainingToday;
             heroUpdateDto.TotalTrainingToday = totalTrainingToday;
