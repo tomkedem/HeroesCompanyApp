@@ -21,7 +21,7 @@ export class HeroCardComponent implements OnInit {
     let strOldDateF = new Date(this.hero.trainingDate).toLocaleString();
 
     let strOldDate = strOldDateF.toString().substring(0, 10);
-   
+
     if(strOldDate != strToday) this.hero.totalTrainingToday=0;
 
     if(Number(this.hero.totalTrainingToday) === 0){
@@ -33,19 +33,9 @@ export class HeroCardComponent implements OnInit {
     }
   }
 
-t:any
 
-  pop(){
-    this.powerGrowsUp=1
-     this.t=Math.random()
-      console.log(this.hero.currentPower)
-      console.log('Hi tom powerGrowsUp: ' + Number(this.powerGrowsUp)*2)
 
-      let p1 =parseFloat(this.powerGrowsUp)
-      console.log('Hi tom powerGrowsUpP1: ' + p1)
-      console.log('Hi tom powerGrowsUpX: ' + (this.t.toFixed(2)))
 
-    }
     updateHero(){
       this.heroesService.updateHero(this.hero).subscribe(
         (successResponse) => {
@@ -65,8 +55,6 @@ t:any
 
       )
     }
-//  * 10 .tofixed(2)
 
-// number.toFixed(2)
 
 }
