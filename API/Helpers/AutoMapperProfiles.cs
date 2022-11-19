@@ -1,21 +1,17 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using AutoMapper;
 using API.DTOs;
 using API.Entities;
-using API.Extensions;
-using AutoMapper;
 
-namespace API.Helper
+
+namespace API.Helpers
 {
-  public class AutoMapperProfiles : Profile
+    public class AutoMapperProfiles : Profile
     {
-    protected AutoMapperProfiles()
-    {
-      CreateMap<Heroes, HeroDto>();
-      //CreateMap<Trainers, TrainerDto>();
+        public AutoMapperProfiles()
+        {
+          CreateMap<Heroes, HeroDto>();
+          CreateMap<Trainers, TrainerDto>();
       
-    }
+        }
   }
 }
