@@ -29,12 +29,16 @@ app.UseMiddleware<ExceptionMiddleware>();
 
 app.UseHttpsRedirection();
 
-app.UseCors(x => x.AllowAnyHeader().AllowAnyMethod().WithOrigins("https://localhost:4200", "https://localhost:7274"));
+app.UseCors(x => x.AllowAnyHeader().AllowAnyMethod().WithOrigins("https://localhost:4200"));
 
 app.UseAuthentication();
 app.UseAuthorization();
 
+app.UseDefaultFiles();
+app.UseStaticFiles();
 app.MapControllers();
+
+app.MapFallbackToController("Index", "Fallback");
 
 
 using var scope = app.Services.CreateScope();
@@ -42,7 +46,7 @@ var services = scope.ServiceProvider;
 try
 {
   var context = services.GetRequiredService<DataContext>();
-  
+
   await context.Database.MigrateAsync();
   await Seed.SeedUsers(context);
   // await Seed.SeedUsers(userManager, roleManager);
