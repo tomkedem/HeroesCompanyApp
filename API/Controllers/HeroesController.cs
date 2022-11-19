@@ -10,26 +10,29 @@ using Microsoft.EntityFrameworkCore;
 
 namespace API.Controllers
 {
-  [Authorize]
-  public class HeroesController : BaseApiController
-  {
-    private readonly DataContext _context;
-    public HeroesController(DataContext context)
+    //[Authorize]
+    public class HeroesController : BaseApiController
     {
-      _context = context;
-    }
+    
+        private readonly IHeroRepository _herorepository;
 
-    [HttpGet]
-    public async Task<ActionResult<IEnumerable<Heroes>>> GetHeroes()
-    {
-      return await _context.Heroes.ToListAsync();
-    }
-    // api/users/2
-    [HttpGet("{id}")]
-    public async Task<ActionResult<Heroes>> GetHeroes(int id)
-    {
-      return await _context.Heroes.FindAsync(id);
-    }
+        public HeroesController(IHeroRepository heroRepository)
+        {
+            _herorepository = heroRepository;
+        }
 
-  }
+        [HttpGet]
+        public async Task<ActionResult<IEnumerable<Heroes>>> GetHeroes()
+        {
+            return Ok(await _herorepository.GetHeroesAsync());
+        }
+   
+    
+        [HttpGet("ByTrainerId/{trainerId}")]
+        public async Task<ActionResult<IEnumerable<Heroes>>> getHeroesByTrainerId(int trainerId)
+        {
+            return Ok(await _herorepository.getHeroesByTrainerId(trainerId));
+        }
+
+    }
 }

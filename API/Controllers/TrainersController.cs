@@ -22,7 +22,7 @@ namespace API.Controllers
 
     [HttpGet]
     public async Task<ActionResult<IEnumerable<Trainers>>> GetTrainers()
-    {      
+    {
       return Ok(await _trainerRepository.GetTrainsAsync());
     }
     // api/username/tom

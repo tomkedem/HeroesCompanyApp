@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Output } from '@angular/core';
 import { Trainer } from 'src/app/_models/trainer';
 
 @Component({
@@ -8,10 +8,12 @@ import { Trainer } from 'src/app/_models/trainer';
 })
 export class TrainerCardComponent implements OnInit {
   @Input() trainer: Trainer;
+  @Output() rt;
   constructor() { }
 
   ngOnInit(): void {
-    console.log('trainer==>', this.trainer)
+    console.log('trainer==>')
+   
   }
 
 }

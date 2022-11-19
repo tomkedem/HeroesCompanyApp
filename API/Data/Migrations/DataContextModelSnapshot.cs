@@ -49,8 +49,14 @@ namespace API.Data.Migrations
                     b.Property<string>("SuitColor")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int>("TotalTrainingToday")
+                        .HasColumnType("int");
+
                     b.Property<int>("TrainerId")
                         .HasColumnType("int");
+
+                    b.Property<DateTime>("TrainingDate")
+                        .HasColumnType("datetime2");
 
                     b.HasKey("Id");
 

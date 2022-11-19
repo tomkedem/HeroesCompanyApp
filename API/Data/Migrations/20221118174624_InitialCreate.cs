@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace API.Data.Migrations
 {
     /// <inheritdoc />
-    public partial class Initialcreat : Migration
+    public partial class InitialCreate : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -23,7 +23,9 @@ namespace API.Data.Migrations
                     StartingPower = table.Column<float>(type: "real", nullable: false),
                     CurrentPower = table.Column<float>(type: "real", nullable: false),
                     Picture = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    TrainerId = table.Column<int>(type: "int", nullable: false)
+                    TrainerId = table.Column<int>(type: "int", nullable: false),
+                    TrainingDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    TotalTrainingToday = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {

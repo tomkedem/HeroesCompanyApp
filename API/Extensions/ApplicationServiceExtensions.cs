@@ -3,26 +3,32 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using API.Data;
+using API.Helper;
 using API.Interfaces;
 using API.Services;
 using Microsoft.EntityFrameworkCore;
 
 namespace API.Extensions
 {
-    public static class ApplicationServiceExtensions
+  public static class ApplicationServiceExtensions
+  {
+    public static IServiceCollection AddApplicationServices(this IServiceCollection services, IConfiguration config)
     {
-        public static IServiceCollection AddApplicationServices(this IServiceCollection services, IConfiguration config){
-            
-            services.AddScoped<ITokenService, TokenService>();
-            services.AddScoped<ITrainerRepository, TrainerRepository>();
 
-            string connString = config.GetConnectionString("DefaultConnection");
+      services.AddScoped<ITokenService, TokenService>();
+      services.AddScoped<ITrainerRepository, TrainerRepository>();
+      services.AddScoped<IHeroRepository, HeroRepository>();
 
-            services.AddDbContext<DataContext>(options =>
-            {
-                options.UseSqlServer(connString);
-            });
-            return services;
-        }
+      services.AddAutoMapper(typeof(AutoMapperProfiles).Assembly);
+ 
+
+      string connString = config.GetConnectionString("DefaultConnection");
+
+      services.AddDbContext<DataContext>(options =>
+      {
+        options.UseSqlServer(connString);
+      });
+      return services;
     }
+  }
 }

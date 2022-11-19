@@ -1,15 +1,57 @@
-<h5>
-  Hero: <b>{{ hero.fullName }}</b>
-</h5>
-<div class="card" style="width: 13rem">
+<h3>
+  Hero name: <b>{{ hero.fullName }}</b>
+</h3>
+<div class="card mb-3" style="max-width: 540px">
+  <div class="row g-0">
+    <div class="col-md-4 card-img-wrapper">
+      <img src="{{ hero.picture }}" class="img-fluid rounded-start" alt="..." />
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h4 class="card-title"><b>Ability:</b> {{ hero.ability }}</h4>
+        <h4 class="card-title">
+          <b>Started to train:</b>
+          {{ hero.startedToTrain | date: "dd/MM/yyyy" }}
+        </h4>
+        <h4 class="card-title">
+          <b>Suit colors:</b>&nbsp;<span style="color: {{ hero.suitColor }}"
+            >{{ hero.suitColor }}
+          </span>
+        </h4>
+        <h4 class="card-title">
+          <b>Starting power:</b> {{ hero.startingPower }}
+        </h4>
+        <h4 class="card-title">
+          <b>Current power:</b> {{ hero.currentPower }}
+        </h4>
+
+        <p class="card-text">
+          <small class="text-muted"
+            >Last training
+            {{ hero.trainingDate | date: "dd/MM/yy, h:mm a" }}</small
+          >
+        </p>
+        <p class="card-text">
+          <small class="text-muted">
+            Amount of training for today: {{ hero.totalTrainingToday }}</small
+          >
+        </p>
+        <button class="btn btn-primary" (click)="updateHero()">
+          Start training
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- <div class="card" style="width: 13rem">
   <img
     src="{{ hero.picture }}"
     class="card-img-top"
     alt="{{ hero.fullName }}"
   />
   <div class="card-body">
-    <!-- <h5 class="card-title">Name: {{trainer.knownAs}}</h5> -->
+    <h5 class="card-title">Name: {{trainer.knownAs}}</h5>
     <p class="card-text">Live in {{ hero.ability }}.</p>
     <a href="#" class="btn btn-primary">Hero in training</a>
   </div>
-</div>
+</div> -->

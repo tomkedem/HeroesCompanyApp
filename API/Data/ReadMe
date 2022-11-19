@@ -1,0 +1,2 @@
+# First time migration run this command
+dotnet ef migrations add InitialCreate -o Data/Migrations

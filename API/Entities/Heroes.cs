@@ -5,8 +5,10 @@ using System.Threading.Tasks;
 
 namespace API.Entities
 {
+  
   public class Heroes
   {
+   
     public Guid Id { get; set; }
     public string FullName { get; set; }
     public string Ability { get; set; }
@@ -15,6 +17,8 @@ namespace API.Entities
     public float StartingPower { get; set; }
     public float CurrentPower { get; set; }
     public string Picture { get; set; }
-    public int TrainerId { get; set; }
+    public int TrainerId { get; set; } 
+    public DateTime TrainingDate { get; set; }
+    public int TotalTrainingToday { get; set; } 
   }
 }

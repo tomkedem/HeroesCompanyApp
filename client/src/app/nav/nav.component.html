@@ -5,21 +5,18 @@
     <ul class="navbar-nav mr-auto">
       <ng-container *ngIf="accountService.currentUser$ | async">
         <li class="nav-item">
-          <a
-            class="nav-link"
-            routerLink="/trainers"
-            routerLinkActive="active"
+          <a class="nav-link" routerLink="/trainers" routerLinkActive="active"
             >Trainers</a
           >
         </li>
         <li class="nav-item">
           <a class="nav-link" routerLink="/heroes" routerLinkActive="active"
-            >Heroes</a
+            >My Heroes</a
           >
         </li>
         <li class="nav-item">
-          <a class="nav-link" routerLink="/lists" routerLinkActive="active"
-            >Lists</a
+          <a class="nav-link" routerLink="/heroesList" routerLinkActive="active"
+            >Heroes</a
           >
         </li>
         <li class="nav-item">
@@ -39,7 +36,6 @@
       *ngIf="accountService.currentUser$ | async as user"
       dropdown
     >
-
       <a class="nav-link dropdown-toggle text-light" dropdownToggle
         >Welcome {{ user.username | titlecase }}</a
       >
@@ -49,8 +45,7 @@
         <div class="dropdown-divider"></div>
         <a class="dropdown-item" (click)="logout()">Logout</a>
       </div>
-
-  </div>
+    </div>
 
     <form
       *ngIf="(accountService.currentUser$ | async) === null"
@@ -83,11 +78,15 @@
       </button>
     </form>
   </div>
-  <div class="card" style="width: 4rem;float: right;margin-right:20px;" *ngIf="accountService.currentUser$ | async as user">
+  <div
+    class="card"
+    style="width: 4rem; float: right; margin-right: 20px"
+    *ngIf="accountService.currentUser$ | async as user"
+  >
     <img
-      src="{{user.picture}}"
+      src="{{ user.picture }}"
       class="card-img-top"
       alt="{{ user.username }}"
     />
-</div>
+  </div>
 </nav>

@@ -8,4 +8,7 @@ export interface Hero {
   currentPower: number
   picture: string
   trainerId: number
+  totalTrainingToday: number
+  trainingDate: string
+
 }

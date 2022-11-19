@@ -15,19 +15,6 @@ builder.Services.AddControllers();
 builder.Services.AddCors();
 builder.Services.AddIdentityServices(builder.Configuration);
 
-// try
-// {
-//   var context = builder.Services.BuildServiceProvider().GetService<DataContext>();
-//   await context.Database.MigrateAsync();
-//   await Seed.SeedUsers(context);
-// }
-// catch (Exception ex)
-// {
-//   var logger = builder.Services.BuildServiceProvider().GetService<ILogger<Program>>();
-//   logger.LogError(ex, "An error occurred dutong migration");
-// }
-
-// await app.RunAsync();
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
@@ -46,7 +33,7 @@ app.UseMiddleware<ExceptionMiddleware>();
 
 app.UseHttpsRedirection();
 
-app.UseCors(x => x.AllowAnyHeader().AllowAnyMethod().WithOrigins("https://localhost:4200", "https://localhost:5001"));
+app.UseCors(x => x.AllowAnyHeader().AllowAnyMethod().WithOrigins("https://localhost:4200", "https://localhost:7274"));
 
 app.UseAuthentication();
 app.UseAuthorization();
@@ -59,8 +46,7 @@ var services = scope.ServiceProvider;
 try
 {
   var context = services.GetRequiredService<DataContext>();
-  // var userManager = services.GetRequiredService<UserManager<Trainers>>();
-  // var roleManager = services.GetRequiredService<RoleManager<AppRole>>();
+  
   await context.Database.MigrateAsync();
   await Seed.SeedUsers(context);
   // await Seed.SeedUsers(userManager, roleManager);

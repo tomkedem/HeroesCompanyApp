@@ -24,6 +24,8 @@ import { TrainerDetailComponent } from './trainers/trainer-detail/trainer-detail
 import { TrainerListComponent } from './trainers/trainer-list/trainer-list.component';
 import { TrainerCardComponent } from './trainers/trainer-card/trainer-card.component';
 import { HeroCardComponent } from './heroes/hero-card/hero-card.component';
+import { AllHeroesListComponent } from './heroes/all-heroes-list/all-heroes-list.component';
+import { JwtInterceptor } from './_interceptors/jwt.interceptor';
 
 
 @NgModule({
@@ -42,7 +44,8 @@ import { HeroCardComponent } from './heroes/hero-card/hero-card.component';
     TrainerDetailComponent,
     TrainerListComponent,
     TrainerCardComponent,
-    HeroCardComponent
+    HeroCardComponent,
+    AllHeroesListComponent
   ],
   imports: [
     BrowserModule,
@@ -53,7 +56,8 @@ import { HeroCardComponent } from './heroes/hero-card/hero-card.component';
     SharedModule
   ],
   providers: [
-    {provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true}
+    {provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true},
+    {provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true}
   ],
   bootstrap: [AppComponent]
 })

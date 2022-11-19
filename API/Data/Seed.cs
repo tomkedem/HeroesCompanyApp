@@ -37,8 +37,10 @@ namespace API.Data
       var heroesData = await System.IO.File.ReadAllTextAsync("Data/HeroesSeedData.json");
       var heroes = JsonSerializer.Deserialize<List<Heroes>>(heroesData);
       if (heroes == null) return;
+      Random rnd = new Random();
       foreach (var heroe in heroes)
       {
+        heroe.TrainerId = rnd.Next(1, 14);
         context.Heroes.Add(heroe);
       }
 

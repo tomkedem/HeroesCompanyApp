@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace API.Data.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20221117161348_Initialcreat")]
-    partial class Initialcreat
+    [Migration("20221118174624_InitialCreate")]
+    partial class InitialCreate
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -52,8 +52,14 @@ namespace API.Data.Migrations
                     b.Property<string>("SuitColor")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int>("TotalTrainingToday")
+                        .HasColumnType("int");
+
                     b.Property<int>("TrainerId")
                         .HasColumnType("int");
+
+                    b.Property<DateTime>("TrainingDate")
+                        .HasColumnType("datetime2");
 
                     b.HasKey("Id");
 
