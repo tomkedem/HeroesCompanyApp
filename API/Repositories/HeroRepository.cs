@@ -23,9 +23,12 @@ namespace API.Data
             _mapper = mapper;
         }
 
-        public async Task<Heroes> GetHeroByIdAsync(int id)
+        public async Task<Heroes> GetHeroByIdAsync(Guid id)
         {
-            return await _context.Heroes.FindAsync(id);
+            return await _context.Heroes
+                            
+                    .SingleOrDefaultAsync(x => x.Id == id);
+
         }
 
         public async Task<HeroDto> GetHeroByUsernameAsync(string username)
@@ -58,11 +61,9 @@ namespace API.Data
             return await _context.SaveChangesAsync() > 0;
         }
 
-
-        public Task<HeroDto> Update(Heroes Hero)
+        public void Update(Heroes heroes)
         {
-            _context.Entry(Hero).State = EntityState.Modified;
-            return null;
+            _context.Entry(heroes).State = EntityState.Modified;
         }
     }
 

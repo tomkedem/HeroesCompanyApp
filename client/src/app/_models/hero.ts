@@ -1,6 +1,6 @@
 export interface Hero {
   id: string
-  fullName: string
+  fullname: string
   ability: string
   startedToTrain: string
   suitColor: string

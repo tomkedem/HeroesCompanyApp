@@ -11,7 +11,8 @@ namespace API.Helpers
         {
           CreateMap<Heroes, HeroDto>();
           CreateMap<Trainers, TrainerDto>();
-      
+          CreateMap<HeroUpdateDto, Heroes>();
+
         }
   }
 }

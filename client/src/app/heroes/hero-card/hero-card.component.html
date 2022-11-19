@@ -1,6 +1,16 @@
-<h3>
-  Hero name: <b>{{ hero.fullName }}</b>
-</h3>
+<div>
+  <button
+    [disabled]="canBeTrain"
+    class="btn btn-success btn-block"
+    (click)="updateHero()"
+  >
+    Start training
+  </button>
+  <br />
+  <h3>
+    Hero name: <b>{{ hero.fullname }}</b>
+  </h3>
+</div>
 <div class="card mb-3" style="max-width: 540px">
   <div class="row g-0">
     <div class="col-md-4 card-img-wrapper">
@@ -36,9 +46,6 @@
             Amount of training for today: {{ hero.totalTrainingToday }}</small
           >
         </p>
-        <button class="btn btn-primary" (click)="updateHero()">
-          Start training
-        </button>
       </div>
     </div>
   </div>

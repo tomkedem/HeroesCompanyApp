@@ -25,6 +25,7 @@ export class HeroesService {
 
   updateHero(hero: Hero){
     console.log('updateHero',hero)
-    return this.http.put<Hero>(this.baseUrl + 'Heroes' , hero);
+
+    return this.http.put<Hero>(this.baseUrl + 'Heroes/UpdateHero' , hero);
   }
 }

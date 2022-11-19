@@ -1,6 +1,6 @@
 using API.Data;
 using API.DTOs;
-using AutoMapper;
+
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
@@ -10,12 +10,11 @@ namespace API.Controllers
   public class TrainersController : BaseApiController
   {
     private readonly ITrainerRepository _repository;
-    private readonly IMapper _mapper;
+   
 
-    public TrainersController(ITrainerRepository repository, IMapper mapper)
+    public TrainersController(ITrainerRepository repository)
     {
-      _repository = repository;
-      _mapper = mapper;
+      _repository = repository;      
     }
 
     [HttpGet]
