@@ -1,20 +1,14 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using API.DTOs;
 using API.Entities;
 
-namespace API.Interfaces
+namespace API.Data
 {
     public interface ITrainerRepository
     {
-        void Update(Trainers trainer);
+        Task<TrainerDto> GetTrainByIdAsync(int id);
+        Task<TrainerDto> GetTrainerByUsernameAsync(string username);
+        Task<IEnumerable<TrainerDto>> GetTrainsAsync();
         Task<bool> SaveAllAsync();
-        Task<IEnumerable<Trainers>> GetTrainsAsync();
-        Task<Trainers> GetTrainByIdAsync(int id);
-        Task<Trainers> GetTrainByUsernameAsync(string username);
-
-
-
+        void Update(Trainers trainer);
     }
 }

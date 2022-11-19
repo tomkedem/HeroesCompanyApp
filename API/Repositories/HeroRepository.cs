@@ -2,8 +2,11 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using API.DTOs;
 using API.Entities;
 using API.Interfaces;
+using AutoMapper;
+using AutoMapper.QueryableExtensions;
 using Microsoft.EntityFrameworkCore;
 
 namespace API.Data
@@ -12,9 +15,12 @@ namespace API.Data
     public class HeroRepository : IHeroRepository
     {
         private readonly DataContext _context;
-        public HeroRepository(DataContext context)
+        private readonly IMapper _mapper;
+
+        public HeroRepository(DataContext context, IMapper mapper)
         {
             _context = context;
+            _mapper = mapper;
         }
 
         public async Task<Heroes> GetHeroByIdAsync(int id)
@@ -22,18 +28,29 @@ namespace API.Data
             return await _context.Heroes.FindAsync(id);
         }
 
-        public async Task<Heroes> GetHeroByUsernameAsync(string username)
+        public async Task<HeroDto> GetHeroByUsernameAsync(string username)
         {
-            return await _context.Heroes.SingleOrDefaultAsync(x => x.FullName == username);
+            return await _context.Heroes
+                    .Where(x => x.FullName == username)
+                    .ProjectTo<HeroDto>(_mapper.ConfigurationProvider)
+                    .SingleOrDefaultAsync();
+
         }
-        public async Task<IEnumerable<Heroes>> getHeroesByTrainerId(int trainerId)
+        public async Task<IEnumerable<HeroDto>> GetHeroesByTrainerId(int trainerId)
         {
-            return await _context.Heroes.Where(o => o.TrainerId == trainerId)
-                                        .OrderBy(o => o.CurrentPower).ToListAsync();
+            return await _context.Heroes
+                    .Where(x => x.TrainerId == trainerId)
+                    .OrderBy(x => x.CurrentPower)
+                    .ProjectTo<HeroDto>(_mapper.ConfigurationProvider)
+                    .ToListAsync();
+
         }
-        public async Task<IEnumerable<Heroes>> GetHeroesAsync()
+        public async Task<IEnumerable<HeroDto>> GetHeroesAsync()
         {
-            return await _context.Heroes.OrderBy(o => o.CurrentPower).ToListAsync();
+            return await _context.Heroes
+                    .OrderBy(o => o.CurrentPower)
+                    .ProjectTo<HeroDto>(_mapper.ConfigurationProvider)
+                    .ToListAsync();
         }
 
         public async Task<bool> SaveAllAsync()
@@ -42,7 +59,7 @@ namespace API.Data
         }
 
 
-        public Task<Heroes> Update(Heroes Hero)
+        public Task<HeroDto> Update(Heroes Hero)
         {
             _context.Entry(Hero).State = EntityState.Modified;
             return null;
