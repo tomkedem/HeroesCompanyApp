@@ -8,7 +8,7 @@ using System.Security.Claims;
 
 namespace API.Controllers
 {
-    //[Authorize]
+    [Authorize]
     public class HeroesController : BaseApiController
     {
         private readonly IUnitOfWork _unitofwork;
