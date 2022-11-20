@@ -1,0 +1,9 @@
+
+
+docker run --name dev -e POSTGRES_USER=apphero -e POSTGRES_PASSWORD=A12@baba -p 5432:5432 -d postgres:latest
+
+
+
+A12@baba
+
+dotnet ef migrations add PostgresInitial -o Data/Migrations
