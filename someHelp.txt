@@ -7,3 +7,6 @@ docker run --name dev -e POSTGRES_USER=apphero -e POSTGRES_PASSWORD=A12@baba -p 
 A12@baba
 
 dotnet ef migrations add PostgresInitial -o Data/Migrations
+
+
+   "outputPath": "../API/wwwroot",
