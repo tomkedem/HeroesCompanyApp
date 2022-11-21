@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using System.Security.Claims;
 namespace API.Controllers
 {
-  //[Authorize]
+  [Authorize]
   public class HeroesController : BaseApiController
   {
     private readonly IUnitOfWork _unitofwork;
@@ -30,7 +30,7 @@ namespace API.Controllers
 
     [HttpGet("ByTrainerId/{trainerId}")]
     public async Task<ActionResult<IEnumerable<HeroDto>>> GetHeroesByTrainerId(int trainerId)
-    {       
+    {
       return Ok(await _unitofwork.HeroRepository.GetHeroesByTrainerId(trainerId));
     }
 

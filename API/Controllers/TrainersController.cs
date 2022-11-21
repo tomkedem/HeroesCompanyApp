@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace API.Controllers
 {
-  // [Authorize]
+  [Authorize]
   public class TrainersController : BaseApiController
   {
     private readonly IUnitOfWork _unitofwork;
