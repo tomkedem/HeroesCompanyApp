@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace API.Controllers
 {
-  [Authorize]
+  // [Authorize]
   public class TrainersController : BaseApiController
   {
     private readonly IUnitOfWork _unitofwork;
@@ -25,6 +25,7 @@ namespace API.Controllers
     [HttpGet("{username}")]
     public async Task<ActionResult<TrainerDto>> GetTrainer(string username)
     {
+      int f = Convert.ToInt32(username);
       return await _unitofwork.TrainerRepository.GetTrainerByUsernameAsync(username);
     }
 

@@ -2,6 +2,7 @@ using API.Data;
 using API.Extensions;
 using API.Middleware;
 using Microsoft.EntityFrameworkCore;
+using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -10,7 +11,13 @@ builder.Services.AddControllers();
 builder.Services.AddCors();
 builder.Services.AddIdentityServices(builder.Configuration);
 
-
+var _logger = new LoggerConfiguration()
+  .ReadFrom.Configuration(builder.Configuration).Enrich.FromLogContext()
+         //  .MinimumLevel.Error()
+         //  .WriteTo.File("D:\\WorkNowM\\HeroesCompanyApp\\API\\ApiLog-.log", rollingInterval: RollingInterval.Day)
+         .CreateLogger();
+builder.Logging.AddSerilog(_logger);
+// D:\WorkNowM\HeroesCompanyApp\API\ApiLog-.log
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();

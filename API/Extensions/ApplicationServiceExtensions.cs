@@ -3,7 +3,7 @@ using API.Helpers;
 using API.Interfaces;
 using API.Services;
 using Microsoft.EntityFrameworkCore;
-
+using Serilog;
 namespace API.Extensions
 {
   public static class ApplicationServiceExtensions
@@ -16,7 +16,7 @@ namespace API.Extensions
 
       services.AddAutoMapper(typeof(AutoMapperProfiles).Assembly);
 
-
+     
       string connString = config.GetConnectionString("DefaultConnection");
 
       services.AddDbContext<DataContext>(options =>
